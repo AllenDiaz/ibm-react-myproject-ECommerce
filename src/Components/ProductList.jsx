@@ -1,8 +1,8 @@
 import React from 'react';
-import './ProductList.css'; 
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addItemsToCart } from './CartSlice'
+import { addItemToCart } from './CartSlice';
+import './ProductList.css'; 
 
 
 const ProductList = () => {
@@ -16,7 +16,7 @@ const ProductList = () => {
   ];
 
   const handleAddToCart = product => {
-    dispatch(addItemsToCart(product));
+    dispatch(addItemToCart(product));
     setDisabledProducts([...disabledProducts, product.id]); // Mark the product as disabled
   };
 
